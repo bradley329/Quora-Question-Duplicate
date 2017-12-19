@@ -1,4 +1,4 @@
-#This is the repository for Quora Question Duplicate - Search Engine Architecture course project.
+# This is the repository for Quora Question Duplicate - Search Engine Architecture course project.
 
 Problem source:
 https://www.kaggle.com/c/quora-question-pairs
@@ -21,9 +21,9 @@ add all word’s feature vector (e.g. 300 dimension), get 2 doc’s cosine dista
 Regression output will tell if two questions are duplicate
 
 
-#2017.05.02
+# 2017.05.02
 
-#Model trainning and testing, to get search engine's corpse:
+# Model trainning and testing, to get search engine's corpse:
 
 python3 -m general_stemmer.stop_stem
 
@@ -42,15 +42,15 @@ python3 -m classifier.kneighbors
 
 python3 -m classifier.predict
 
-#LSTM mddel
+# LSTM model
 
 cd lstm/lstm_py
 
-#size<404288
+# size < 404288
 python3 lstm.py --size=10000 
 
-#web search engine usage:
-#go to linserv1
+# web search engine usage:
+# go to linserv1
 
 1. create input files
 ./assignment4/reformat_all.sh
