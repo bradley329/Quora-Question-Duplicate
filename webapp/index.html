@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Quora Question Pair</title>
+<style>
+li{
+	margin-left:6px;
+}
+#caption{
+	width: 780px;
+	margin-left : 24px;
+}
+#captionContent{
+	font-size :60px;
+	color: brown;
+}
+#searchWrap{
+	position:relative;
+}
+#searchArea{
+
+	margin-left:24px;
+	height: 100px;
+	width :900px;
+}
+#inputParent{
+	position:absolute;
+	top: 50%;
+	height: 100px;
+	margin-top :-50px;
+}
+.inputwrap{
+	width: 800px; 
+	height:40px;
+	margin-bottom:2px;
+	margin-top:2px;
+
+}
+.inputbox1{
+	position:absolute;
+	top :25%;
+
+	font-size: 16px;
+	height:40px;
+	width: 780px; 
+	padding-left: 10px;
+	margin-top: -20px;
+
+}
+.inputbox2{
+	position:absolute;
+	top :75%;
+
+	font-size: 16px;
+	height:40px;
+	width: 780px; 
+	padding-left: 10px;
+	margin-top: -20px;
+
+}
+#compareButton{
+	position:absolute;
+	top: 50%;
+	left:820px;
+	height : 40px;
+	margin-top : -20px;
+}
+</style>
+</head>
+<body>
+	<div id="caption">
+		<h id="captionContent">Quora Question Pair</h>
+	</div>
+	<div id = "searchWrap">
+  	<div id= "searchArea">
+		<div id = "inputParent">
+		<form method = "post" action="/searchresult" >
+			
+				<div class = "inputwrap">
+				<input type="text" class = "inputbox1" name = "question1" placeholder="question#1 content"/>
+				</div>
+				<div class = "inputwrap">
+				<input type="text" class = "inputbox2" name = "question2" placeholder="question#2 content"/>
+				</div>
+			
+			<input type="submit" id="compareButton" value="Search" style="font-size:20px"/>	
+		</form>
+		</div>
+  	</div>
+	</div>
+</body>
+
+</html>

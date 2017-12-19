@@ -1,0 +1,8 @@
+1. 小明 stem 生成stem_out pickle文件
+2. 小明 word2vec_train 生成mdl and bin
+
+1. 我的stemmer， output 100000 train and 20000 test
+2. sentence2vec_noidf
+3. sentence2vec_idf
+
+提高的地方， test其实没做 it's not cross validation

@@ -1,0 +1,123 @@
+<html>
+<head>
+<style>
+li{
+	margin-left:6px;
+}
+#caption{
+	width: 780px;
+	margin-left : 24px;
+	/*text-align:center;*/
+}
+#captionContent{
+	font-size :60px;
+	color: brown;
+}
+#searchWrap{
+	position:relative;
+}
+#searchArea{
+
+	margin-left:24px;
+	height: 100px;
+	width :900px;
+}
+#inputParent{
+	position:absolute;
+	top: 50%;
+	height: 100px;
+	margin-top :-50px;
+}
+.inputwrap{
+	width: 800px; 
+	height:40px;
+	margin-bottom:2px;
+	margin-top:2px;
+
+}
+.inputbox1{
+	position:absolute;
+	top :25%;
+
+	font-size: 16px;
+	height:40px;
+	width: 780px; 
+	padding-left: 10px;
+	margin-top: -20px;
+
+}
+.inputbox2{
+	position:absolute;
+	top :75%;
+
+	font-size: 16px;
+	height:40px;
+	width: 780px; 
+	padding-left: 10px;
+	margin-top: -20px;
+
+}
+#compareButton{
+	position:absolute;
+	top: 50%;
+	left:820px;
+	height : 40px;
+	margin-top : -20px;
+}
+.qlink{
+	font-size:12px;
+	color:blue;
+}
+#resultArea{
+	margin-top:40px;
+	font-size: 24px;
+}
+</style>
+<title>{{title}}</title>
+</head>
+<body style="margin-left: 120px">
+	<div id="caption">
+		<h id="captionContent">Quora Question Pair</h>
+	</div>
+	<div id = "searchWrap">
+  	<div id= "searchArea">
+		<div id = "inputParent">
+		<form method = "post" action="/searchresult" >
+			
+				<div class = "inputwrap">
+				<input type="text" class = "inputbox1" name = "question1" placeholder="question#1 content" value="{{question1}}"/>
+				</div>
+				<div class = "inputwrap">
+				<input type="text" class = "inputbox2" name = "question2" placeholder="question#2 content" value="{{question2}}"/>
+				</div>
+			
+			<input type="submit" id="compareButton" value="Search" style="font-size:20px"/>	
+		</form>
+		</div>
+  	</div>
+	</div>
+
+	<div id = "resultArea">
+    
+      {% for searchResult in searchResults %}
+	  	<div id="questionArea" style="margin-bottom: 15px;">
+			<ul style="margin-top:0px; margin-bottom:0px"> 
+			<li>{{ searchResult["question1"] }}<a class="qlink" href= "https://www.quora.com/search?q={{ searchResult["question1"] }}" >link</a></li>
+			<li>{{ searchResult["question2"] }}<a class="qlink" href= "https://www.quora.com/search?q={{ searchResult["question2"] }}" >link</a></li>
+			</ul>
+
+			<div style= "margin-left:24px; margin-top: 0px">
+				<strong>isDuplicate: {{ "Yes" if searchResult["isDup"]=="1" else "No" }}</strong>
+			</div>
+
+			<details style="font-size:18px;margin-left:24px">
+				<summary style="color:grey;">details</summary>
+				<p style="margin-top : 0px;margin-left:14px">questionID: {{searchResult["id"]}}; relative score: {{searchResult["score"]}}</p>
+			</details>
+		</div>
+      {% end %}
+
+	</div>
+</body>
+
+</html>
